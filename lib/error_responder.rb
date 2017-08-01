@@ -1,0 +1,3 @@
+module ErrorResponder
+  # Your code goes here...
+end
