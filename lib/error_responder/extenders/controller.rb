@@ -5,7 +5,7 @@ module ErrorResponder
         render json: ErrorResponder::Extenders::Serialize.serialize(errors, options), status: :conflict
       end
 
-      def respond_with(err_code, key: nil, message: nil)
+      def err_respond(err_code, key: nil, message: nil)
         err_name = Rack::Utils::HTTP_STATUS_CODES[err_code].downcase.tr(' ', '_').to_sym
         render json: ErrorResponder::Extenders::Serialize.error(err_code, key, message), status: err_name
       end
