@@ -24,9 +24,9 @@ err_respond(err_code, key: nil, message: nil)
 serialize_errors(errors, options = {})
 ```
 
-#### Usage example
+### Usage example
 
-##### 1) Generate standard HTTP responses
+#### 1) Generate standard HTTP responses
 
 ```ruby
 err_respond 404
@@ -59,7 +59,7 @@ Will be generated:
 }
 ```
 
-##### 2) Generate responce with model validation errors
+#### 2) Generate responce with model validation errors
 
 ```ruby
 @user = User.new(user_params)
