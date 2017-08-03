@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   def index
     # example
-    err_respond 401
+    err_respond 404
   end
 end

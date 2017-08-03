@@ -5,13 +5,10 @@ module ErrorResponder
         def error(err_code, key = nil, message = nil)
           data = {}
           data[:status] = err_code.to_s
-          data[:errors] = {}
+          data[:info] = Rack::Utils::HTTP_STATUS_CODES[err_code]
 
-          if key.present? && message.present?
-            data[:errors][key] = message
-          else
-            data[:errors][err_code] = message.nil? ? Rack::Utils::HTTP_STATUS_CODES[err_code] : message
-          end
+          data[:errors] = {}
+          data[:errors][key] = message if key.present? && message.present?
 
           data
         end
