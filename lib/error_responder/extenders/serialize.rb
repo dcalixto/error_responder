@@ -17,6 +17,8 @@ module ErrorResponder
           return if errors.nil?
 
           json = {}
+          json[:status] = 409
+          json[:info]   = Rack::Utils::HTTP_STATUS_CODES[409]
           json[:errors] = {}
 
           errors.to_hash(true).each do |key, message|
